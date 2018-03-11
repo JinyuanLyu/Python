@@ -1,0 +1,8 @@
+        if not nums:
+            return 0
+
+        maxSum = currentSum = -float("inf")
+        for n in nums:           
+            currentSum = max(currentSum+n, n)
+            maxSum = max(maxSum, currentSum)
+        return maxSum
