@@ -1,0 +1,15 @@
+class Solution(object):
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        seen = { 1: 1, 2: 2 }
+        return climb(n, seen)
+        
+def climb(n, seen={}):
+    if n in seen:
+        return seen[n]
+    else:
+        seen[n] = climb(n - 1, seen) + climb(n - 2, seen)
+        return seen[n]
